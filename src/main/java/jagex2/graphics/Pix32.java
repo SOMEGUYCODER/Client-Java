@@ -85,8 +85,22 @@ public class Pix32 extends Pix2D {
 		this.cropBottom = var5.g2();
 		int var10 = var5.g1();
 		int var11 = this.cropBottom * this.cropRight;
-		this.pixels = new int[var11];
-		if (var10 == 0) {
+		//this.pixels = new int[var11];
+                long pixelCount = (long) this.cropRight * this.cropBottom;
+
+// Sanity check: cap allocation to prevent massive arrays
+                if (pixelCount > 50000000) { // ~200 MB limit
+                   //System.err.println("⚠️ Pix32 allocation too large: " +
+                   //this.cropRight + "x" + this.cropBottom + " = " + pixelCount + " pixels");
+                   //throw new RuntimeException("Refusing to allocate oversized Pix32 image");
+                        System.err.println("⚠️ Pix32 allocation too large for image: " + arg1 +
+            " (" + this.width + "x" + this.height + " = " + pixelCount + " pixels)");
+                   throw new RuntimeException("Refusing to allocate oversized Pix32 image: " + arg1);
+                }
+
+                this.pixels = new int[(int) pixelCount];		
+
+                if (var10 == 0) {
 			for (int var12 = 0; var12 < var11; var12++) {
 				this.pixels[var12] = var7[var4.g1()];
 			}
