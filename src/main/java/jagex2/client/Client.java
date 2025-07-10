@@ -203,16 +203,16 @@ public class Client extends GameShell {
 	public Pix32 imageMapedge;
 
 	@ObfuscatedName("client.ki")
-	public Pix8[] imageMapscene = new Pix8[50];
+	public Pix8[] imageMapscene = new Pix8[100];
 
 	@ObfuscatedName("client.ci")
 	public Pix32[] imageMapfunction = new Pix32[50];
 
 	@ObfuscatedName("client.ch")
-	public Pix32[] imageHitmark = new Pix32[20];
+	public Pix32[] imageHitmark = new Pix32[50];
 
 	@ObfuscatedName("client.Ge")
-	public Pix32[] imageHeadicon = new Pix32[20];
+	public Pix32[] imageHeadicon = new Pix32[50];
 
 	@ObfuscatedName("client.ng")
 	public Pix32 imageMapmarker0;
