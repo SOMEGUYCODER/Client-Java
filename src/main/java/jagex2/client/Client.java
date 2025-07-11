@@ -206,7 +206,7 @@ public class Client extends GameShell {
 	public Pix8[] imageMapscene = new Pix8[100];
 
 	@ObfuscatedName("client.ci")
-	public Pix32[] imageMapfunction = new Pix32[50];
+	public Pix32[] imageMapfunction = new Pix32[100];
 
 	@ObfuscatedName("client.ch")
 	public Pix32[] imageHitmark = new Pix32[50];
@@ -7256,6 +7256,7 @@ public class Client extends GameShell {
 						} else {
 							int landFile = this.sceneMapLandFile[mapCount] = this.onDemand.getMapFile(z, x, 0);
 							if (landFile != -1) {
+							         
 								this.onDemand.request(3, landFile);
 							}
 
